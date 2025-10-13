@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music House - Cửa hàng băng đĩa</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container">
+        <a href="index.html" class="navbar-brand">🎵 Music House</a>
+        <nav class="main-nav">
+          <a href="admin.html" class="nav-link">Trang Quản lý</a>
+          <div id="cart-icon" class="cart-icon">
+            🛒
+            <span id="cart-count" class="cart-count">0</span>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <h1>Sản phẩm nổi bật</h1>
+
+      <div class="slider-container">
+        <div id="productList" class="product-slider">
+          <div class="product-card">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png"
+              alt="The Dark Side of the Moon"
+            />
+            <div class="card-content">
+              <h3>The Dark Side of the Moon</h3>
+              <p class="artist">Pink Floyd</p>
+              <p class="price" data-price-value="550000">550.000 VNĐ</p>
+              <button class="add-to-cart-btn" data-product-index="0">
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+          <div class="product-card">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/4/42/Beatles_-_Abbey_Road.jpg"
+              alt="Abbey Road"
+            />
+            <div class="card-content">
+              <h3>Abbey Road</h3>
+              <p class="artist">The Beatles</p>
+              <p class="price" data-price-value="480000">480.000 VNĐ</p>
+              <button class="add-to-cart-btn" data-product-index="1">
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+          <div class="product-card">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/5/55/Michael_Jackson_-_Thriller.png"
+              alt="Thriller"
+            />
+            <div class="card-content">
+              <h3>Thriller</h3>
+              <p class="artist">Michael Jackson</p>
+              <p class="price" data-price-value="450000">450.000 VNĐ</p>
+              <button class="add-to-cart-btn" data-product-index="2">
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+          <div class="product-card">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/f/fb/FMacRumours.PNG"
+              alt="Rumours"
+            />
+            <div class="card-content">
+              <h3>Rumours</h3>
+              <p class="artist">Fleetwood Mac</p>
+              <p class="price" data-price-value="420000">420.000 VNĐ</p>
+              <button class="add-to-cart-btn" data-product-index="3">
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+          <div class="product-card">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/2/26/Led_Zeppelin_-_Led_Zeppelin_IV.jpg"
+              alt="Led Zeppelin IV"
+            />
+            <div class="card-content">
+              <h3>Led Zeppelin IV</h3>
+              <p class="artist">Led Zeppelin</p>
+              <p class="price" data-price-value="520000">520.000 VNĐ</p>
+              <button class="add-to-cart-btn" data-product-index="4">
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+          <div class="product-card">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/a/a4/Random_Access_Memories.jpg"
+              alt="Random Access Memories"
+            />
+            <div class="card-content">
+              <h3>Random Access Memories</h3>
+              <p class="artist">Daft Punk</p>
+              <p class="price" data-price-value="600000">600.000 VNĐ</p>
+              <button class="add-to-cart-btn" data-product-index="5">
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+          <div class="product-card">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/1/1b/Adele_-_21.png"
+              alt="21"
+            />
+            <div class="card-content">
+              <h3>21</h3>
+              <p class="artist">Adele</p>
+              <p class="price" data-price-value="350000">350.000 VNĐ</p>
+              <button class="add-to-cart-btn" data-product-index="6">
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+          <div class="product-card">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/b/b7/NirvanaNevermindalbumcover.jpg"
+              alt="Nevermind"
+            />
+            <div class="card-content">
+              <h3>Nevermind</h3>
+              <p class="artist">Nirvana</p>
+              <p class="price" data-price-value="500000">500.000 VNĐ</p>
+              <button class="add-to-cart-btn" data-product-index="7">
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+        </div>
+        <button id="prevBtn" class="slider-btn prev">&#8249;</button>
+        <button id="nextBtn" class="slider-btn next">&#8250;</button>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column about-us">
+            <h2>Về Music House</h2>
+            <p>
+              Music House là nơi dành cho những tâm hồn yêu âm nhạc đích thực,
+              chuyên cung cấp các sản phẩm băng đĩa than, CD chất lượng cao từ
+              các nghệ sĩ huyền thoại.
+            </p>
+          </div>
+          <div class="footer-column contact-info">
+            <h2>Thông tin liên hệ</h2>
+            <ul>
+              <li>📍 123 Mỹ Đình , Nam Từ Liêm , Hà Nội</li>
+              <li>📞 (024) 3333 9999</li>
+              <li>✉️ support@musichouse.vn</li>
+            </ul>
+          </div>
+          <div class="footer-column social-media">
+            <h2>Theo dõi chúng tôi</h2>
+            <div class="social-links">
+              <a href="#" title="Facebook">Facebook</a>
+              <a href="#" title="Instagram">Instagram</a>
+              <a href="#" title="Youtube">Youtube</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Music House. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <div id="cart-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Giỏ hàng của bạn</h2>
+        <div id="cart-items">
+          <p class="cart-empty-message">Giỏ hàng trống.</p>
+        </div>
+        <div class="cart-summary">
+          <p>Tổng tiền: <span id="cart-total">0 VNĐ</span></p>
+          <button id="checkout-btn" class="checkout-btn">Thanh toán</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="checkout-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" data-modal="checkout">&times;</span>
+        <h2>Thông tin giao hàng</h2>
+        <form id="checkout-form">
+          <div class="form-group">
+            <label for="name">Họ và tên:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Số điện thoại:</label>
+            <input type="tel" id="phone" name="phone" required />
+          </div>
+          <div class="form-group">
+            <label for="address">Địa chỉ:</label>
+            <textarea id="address" name="address" rows="3" required></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="checkout-submit-btn">
+              Xác nhận đơn hàng
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="user_script.js"></script>
+  </body>
+</html>
