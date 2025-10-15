@@ -3,162 +3,219 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Music House - Cửa hàng băng đĩa</title>
+    <title>Mobile Store</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- NAVBAR -->
     <header class="navbar">
       <div class="container">
-        <a href="index.html" class="navbar-brand">🎵 Music House</a>
-        <nav class="main-nav">
-          <a href="admin.html" class="nav-link">Trang Quản lý</a>
-          <div id="cart-icon" class="cart-icon">
-            🛒
-            <span id="cart-count" class="cart-count">0</span>
+        <a href="#" class="navbar-brand">📱 Mobile Store</a>
+        <nav>
+          <div class="nav-right">
+            <div id="cart-icon" class="cart-icon">
+              🛒
+              <span id="cart-count" class="cart-count">0</span>
+            </div>
           </div>
         </nav>
       </div>
     </header>
 
+    <!-- MAIN -->
     <main class="container">
-      <h1>Sản phẩm nổi bật</h1>
+      <h1>🏪 Cửa hàng điện thoại di động</h1>
+      <div class="main-content-layout">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+          <h2>Thương hiệu</h2>
+          <ul class="category-list" id="brand-filter">
+            <li><a href="#" data-brand="all" class="active">Tất cả</a></li>
+            <li><a href="#" data-brand="Apple">Apple</a></li>
+            <li><a href="#" data-brand="Samsung">Samsung</a></li>
+            <li><a href="#" data-brand="Xiaomi">Xiaomi</a></li>
+            <li><a href="#" data-brand="OPPO">OPPO</a></li>
+            <li><a href="#" data-brand="Vivo">Vivo</a></li>
+            <li><a href="#" data-brand="Realme">Realme</a></li>
+          </ul>
+        </aside>
 
-      <div class="slider-container">
-        <div id="productList" class="product-slider">
-          <div class="product-card">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png"
-              alt="The Dark Side of the Moon"
-            />
-            <div class="card-content">
-              <h3>The Dark Side of the Moon</h3>
-              <p class="artist">Pink Floyd</p>
-              <p class="price" data-price-value="550000">550.000 VNĐ</p>
-              <button class="add-to-cart-btn" data-product-index="0">
-                Thêm vào giỏ
-              </button>
+        <!-- PRODUCT GRID -->
+        <section class="product-section">
+          <div id="product-grid" class="product-grid">
+            <div class="product-card" data-brand="Apple">
+              <img
+                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-15-pro-256gb_1.png"
+                alt="iPhone 15 Pro Max"
+              />
+              <div class="card-content">
+                <h3>iPhone 15 Pro Max</h3>
+                <p class="brand">Apple</p>
+                <p class="price">31.000.000 VNĐ</p>
+                <button
+                  class="add-to-cart-btn"
+                  data-id="1"
+                  data-name="iPhone 15 Pro Max"
+                  data-price="31000000"
+                >
+                  Thêm vào giỏ
+                </button>
+              </div>
+            </div>
+
+            <div class="product-card" data-brand="Apple">
+              <img
+                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-14-pro_2__5.png"
+                alt="iPhone 14 Pro Max"
+              />
+              <div class="card-content">
+                <h3>iPhone 14 Pro Max</h3>
+                <p class="brand">Apple</p>
+                <p class="price">26.000.000 VNĐ</p>
+                <button
+                  class="add-to-cart-btn"
+                  data-id="2"
+                  data-name="iPhone 14 Pro Max"
+                  data-price="26000000"
+                >
+                  Thêm vào giỏ
+                </button>
+              </div>
+            </div>
+            <div class="product-card" data-brand="Samsung">
+              <img
+                src="https://cdn2.cellphones.com.vn/358x/media/catalog/product/g/a/galaxy-s24-ultra-xam_1_3.png"
+                alt="Samsung S24 Ultra"
+              />
+              <div class="card-content">
+                <h3>Samsung Galaxy S24 Ultra</h3>
+                <p class="brand">Samsung</p>
+                <p class="price">28.000.000 VNĐ</p>
+                <button
+                  class="add-to-cart-btn"
+                  data-id="3"
+                  data-name="Samsung S24 Ultra"
+                  data-price="28000000"
+                >
+                  Thêm vào giỏ
+                </button>
+              </div>
+            </div>
+            <div class="product-card" data-brand="Samsung">
+              <img
+                src="https://cdn2.cellphones.com.vn/358x/media/catalog/product/g/a/galaxy-s24-xam_3.png"
+                alt="Samsung S24"
+              />
+              <div class="card-content">
+                <h3>Samsung Galaxy S24</h3>
+                <p class="brand">Samsung</p>
+                <p class="price">21.000.000 VNĐ</p>
+                <button
+                  class="add-to-cart-btn"
+                  data-id="4"
+                  data-name="Samsung S24"
+                  data-price="21000000"
+                >
+                  Thêm vào giỏ
+                </button>
+              </div>
+            </div>
+            <div class="product-card" data-brand="Xiaomi">
+              <img
+                src="https://cdn2.cellphones.com.vn/358x/media/catalog/product/d/i/dien-thoai-oppo-a18-4gb-64gb_16_.png"
+                alt="Xiaomi 14 Ultra"
+              />
+              <div class="card-content">
+                <h3>Xiaomi 14 Ultra</h3>
+                <p class="brand">Xiaomi</p>
+                <p class="price">23.000.000 VNĐ</p>
+                <button
+                  class="add-to-cart-btn"
+                  data-id="5"
+                  data-name="Xiaomi 14 Ultra"
+                  data-price="23000000"
+                >
+                  Thêm vào giỏ
+                </button>
+              </div>
+            </div>
+            <div class="product-card" data-brand="OPPO">
+              <img
+                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/e/d/eda006276802c_1_1.jpg"
+                alt="OPPO Find X7 Ultra"
+              />
+              <div class="card-content">
+                <h3>OPPO Find X7 Ultra</h3>
+                <p class="brand">OPPO</p>
+                <p class="price">17.000.000 VNĐ</p>
+                <button
+                  class="add-to-cart-btn"
+                  data-id="6"
+                  data-name="OPPO Find X7 Ultra"
+                  data-price="17000000"
+                >
+                  Thêm vào giỏ
+                </button>
+              </div>
+            </div>
+            <div class="product-card" data-brand="Vivo">
+              <img
+                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/d/i/dien-thoai-vivo-x100-pro_1_.png"
+                alt="Vivo X100 Pro"
+              />
+              <div class="card-content">
+                <h3>Vivo X100 Pro</h3>
+                <p class="brand">Vivo</p>
+                <p class="price">21.000.000 VNĐ</p>
+                <button
+                  class="add-to-cart-btn"
+                  data-id="7"
+                  data-name="Vivo X100 Pro"
+                  data-price="21000000"
+                >
+                  Thêm vào giỏ
+                </button>
+              </div>
+            </div>
+            <div class="product-card" data-brand="Realme">
+              <img
+                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/_/e/_e4.jpg"
+                alt="Realme GT Neo 6 SE"
+              />
+              <div class="card-content">
+                <h3>Realme GT Neo 6 SE</h3>
+                <p class="brand">Realme</p>
+                <p class="price">12.000.000 VNĐ</p>
+                <button
+                  class="add-to-cart-btn"
+                  data-id="8"
+                  data-name="Realme GT Neo 6 SE"
+                  data-price="12000000"
+                >
+                  Thêm vào giỏ
+                </button>
+              </div>
             </div>
           </div>
-          <div class="product-card">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/en/4/42/Beatles_-_Abbey_Road.jpg"
-              alt="Abbey Road"
-            />
-            <div class="card-content">
-              <h3>Abbey Road</h3>
-              <p class="artist">The Beatles</p>
-              <p class="price" data-price-value="480000">480.000 VNĐ</p>
-              <button class="add-to-cart-btn" data-product-index="1">
-                Thêm vào giỏ
-              </button>
-            </div>
-          </div>
-          <div class="product-card">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/en/5/55/Michael_Jackson_-_Thriller.png"
-              alt="Thriller"
-            />
-            <div class="card-content">
-              <h3>Thriller</h3>
-              <p class="artist">Michael Jackson</p>
-              <p class="price" data-price-value="450000">450.000 VNĐ</p>
-              <button class="add-to-cart-btn" data-product-index="2">
-                Thêm vào giỏ
-              </button>
-            </div>
-          </div>
-          <div class="product-card">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/en/f/fb/FMacRumours.PNG"
-              alt="Rumours"
-            />
-            <div class="card-content">
-              <h3>Rumours</h3>
-              <p class="artist">Fleetwood Mac</p>
-              <p class="price" data-price-value="420000">420.000 VNĐ</p>
-              <button class="add-to-cart-btn" data-product-index="3">
-                Thêm vào giỏ
-              </button>
-            </div>
-          </div>
-          <div class="product-card">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/en/2/26/Led_Zeppelin_-_Led_Zeppelin_IV.jpg"
-              alt="Led Zeppelin IV"
-            />
-            <div class="card-content">
-              <h3>Led Zeppelin IV</h3>
-              <p class="artist">Led Zeppelin</p>
-              <p class="price" data-price-value="520000">520.000 VNĐ</p>
-              <button class="add-to-cart-btn" data-product-index="4">
-                Thêm vào giỏ
-              </button>
-            </div>
-          </div>
-          <div class="product-card">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/en/a/a4/Random_Access_Memories.jpg"
-              alt="Random Access Memories"
-            />
-            <div class="card-content">
-              <h3>Random Access Memories</h3>
-              <p class="artist">Daft Punk</p>
-              <p class="price" data-price-value="600000">600.000 VNĐ</p>
-              <button class="add-to-cart-btn" data-product-index="5">
-                Thêm vào giỏ
-              </button>
-            </div>
-          </div>
-          <div class="product-card">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/en/1/1b/Adele_-_21.png"
-              alt="21"
-            />
-            <div class="card-content">
-              <h3>21</h3>
-              <p class="artist">Adele</p>
-              <p class="price" data-price-value="350000">350.000 VNĐ</p>
-              <button class="add-to-cart-btn" data-product-index="6">
-                Thêm vào giỏ
-              </button>
-            </div>
-          </div>
-          <div class="product-card">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/en/b/b7/NirvanaNevermindalbumcover.jpg"
-              alt="Nevermind"
-            />
-            <div class="card-content">
-              <h3>Nevermind</h3>
-              <p class="artist">Nirvana</p>
-              <p class="price" data-price-value="500000">500.000 VNĐ</p>
-              <button class="add-to-cart-btn" data-product-index="7">
-                Thêm vào giỏ
-              </button>
-            </div>
-          </div>
-        </div>
-        <button id="prevBtn" class="slider-btn prev">&#8249;</button>
-        <button id="nextBtn" class="slider-btn next">&#8250;</button>
+        </section>
       </div>
     </main>
     <footer class="site-footer">
       <div class="container">
         <div class="footer-content">
           <div class="footer-column about-us">
-            <h2>Về Music House</h2>
+            <h2>Về Mobile Store</h2>
             <p>
-              Music House là nơi dành cho những tâm hồn yêu âm nhạc đích thực,
-              chuyên cung cấp các sản phẩm băng đĩa than, CD chất lượng cao từ
-              các nghệ sĩ huyền thoại.
+              Chuyên cung cấp các dòng điện thoại thông minh chính hãng với giá
+              tốt nhất thị trường, cùng dịch vụ chăm sóc khách hàng tận tâm.
             </p>
           </div>
           <div class="footer-column contact-info">
             <h2>Thông tin liên hệ</h2>
             <ul>
-              <li>📍 123 Mỹ Đình , Nam Từ Liêm , Hà Nội</li>
+              <li>📍 123 Mỹ Đình, Nam Từ Liêm, Hà Nội</li>
               <li>📞 (024) 3333 9999</li>
-              <li>✉️ support@musichouse.vn</li>
+              <li>✉️ support@mobilestore.vn</li>
             </ul>
           </div>
           <div class="footer-column social-media">
@@ -171,48 +228,21 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2025 Music House. All Rights Reserved.</p>
+          <p>&copy; 2025 Mobile Store. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
 
+    <!-- CART MODAL -->
     <div id="cart-modal" class="modal">
       <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <h2>Giỏ hàng của bạn</h2>
-        <div id="cart-items">
-          <p class="cart-empty-message">Giỏ hàng trống.</p>
-        </div>
+        <span class="close">&times;</span>
+        <h2>🛒 Giỏ hàng của bạn</h2>
+        <div id="cart-items" class="cart-items"></div>
         <div class="cart-summary">
-          <p>Tổng tiền: <span id="cart-total">0 VNĐ</span></p>
+          <h3>Tổng cộng: <span id="total-price">0 VNĐ</span></h3>
           <button id="checkout-btn" class="checkout-btn">Thanh toán</button>
         </div>
-      </div>
-    </div>
-
-    <div id="checkout-modal" class="modal">
-      <div class="modal-content">
-        <span class="close-btn" data-modal="checkout">&times;</span>
-        <h2>Thông tin giao hàng</h2>
-        <form id="checkout-form">
-          <div class="form-group">
-            <label for="name">Họ và tên:</label>
-            <input type="text" id="name" name="name" required />
-          </div>
-          <div class="form-group">
-            <label for="phone">Số điện thoại:</label>
-            <input type="tel" id="phone" name="phone" required />
-          </div>
-          <div class="form-group">
-            <label for="address">Địa chỉ:</label>
-            <textarea id="address" name="address" rows="3" required></textarea>
-          </div>
-          <div class="form-actions">
-            <button type="submit" class="checkout-submit-btn">
-              Xác nhận đơn hàng
-            </button>
-          </div>
-        </form>
       </div>
     </div>
 
