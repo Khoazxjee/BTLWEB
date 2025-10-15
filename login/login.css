@@ -1,0 +1,136 @@
+:root {
+    --primary-color: #d70018;
+    --text-color: #333;
+    --text-color-light: #666;
+    --light-gray: #f2f2f2;
+    --white-color: #ffffff;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background: var(--light-gray);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* --- KHUNG ĐĂNG NHẬP CHÍNH --- */
+.login-container {
+    background: var(--white-color);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+}
+
+/* --- HEADER CỦA FORM --- */
+.login-header .logo {
+    font-weight: bold;
+    font-size: 2em;
+    color: var(--primary-color);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.login-header .logo i {
+    margin-right: 8px;
+}
+
+/* --- FORM --- */
+.login-form h2 {
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    color: var(--text-color);
+}
+
+.login-form h2 i {
+    margin-right: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-color-light);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.2s;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.form-options {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.forgot-password {
+    font-size: 0.9em;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* --- NÚT ĐĂNG NHẬP --- */
+.login-btn {
+    background: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    padding: 14px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    width: 100%;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.login-btn:hover {
+    background: #a80012;
+}
+
+.signup-link {
+    color: var(--text-color-light);
+    font-size: 0.95em;
+}
+
+.signup-link a {
+    color: var(--primary-color);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
