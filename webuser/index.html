@@ -3,18 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mobile Store</title>
+    <title>K Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- NAVBAR -->
     <header class="navbar">
       <div class="container">
-        <a href="#" class="navbar-brand">📱 Mobile Store</a>
+        <a href="#" class="navbar-brand">
+          <i class="fa-solid fa-store"></i>K Store
+        </a>
         <nav>
           <div class="nav-right">
             <div id="cart-icon" class="cart-icon">
-              🛒
+              <i class="fa-solid fa-cart-shopping"></i>
               <span id="cart-count" class="cart-count">0</span>
             </div>
           </div>
@@ -22,11 +33,8 @@
       </div>
     </header>
 
-    <!-- MAIN -->
     <main class="container">
-      <h1>🏪 Cửa hàng điện thoại di động</h1>
       <div class="main-content-layout">
-        <!-- SIDEBAR -->
         <aside class="sidebar">
           <h2>Thương hiệu</h2>
           <ul class="category-list" id="brand-filter">
@@ -40,7 +48,6 @@
           </ul>
         </aside>
 
-        <!-- PRODUCT GRID -->
         <section class="product-section">
           <div id="product-grid" class="product-grid">
             <div class="product-card" data-brand="Apple">
@@ -62,7 +69,6 @@
                 </button>
               </div>
             </div>
-
             <div class="product-card" data-brand="Apple">
               <img
                 src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-14-pro_2__5.png"
@@ -200,11 +206,12 @@
         </section>
       </div>
     </main>
+
     <footer class="site-footer">
       <div class="container">
         <div class="footer-content">
           <div class="footer-column about-us">
-            <h2>Về Mobile Store</h2>
+            <h2>Về K Store</h2>
             <p>
               Chuyên cung cấp các dòng điện thoại thông minh chính hãng với giá
               tốt nhất thị trường, cùng dịch vụ chăm sóc khách hàng tận tâm.
@@ -213,17 +220,28 @@
           <div class="footer-column contact-info">
             <h2>Thông tin liên hệ</h2>
             <ul>
-              <li>📍 123 Mỹ Đình, Nam Từ Liêm, Hà Nội</li>
-              <li>📞 (024) 3333 9999</li>
-              <li>✉️ support@mobilestore.vn</li>
+              <li>
+                <i class="fa-solid fa-location-dot"></i>123 Mỹ Đình, Nam Từ
+                Liêm, Hà Nội
+              </li>
+              <li><i class="fa-solid fa-phone"></i>(024) 3333 9999</li>
+              <li>
+                <i class="fa-solid fa-envelope"></i>support@mobilestore.vn
+              </li>
             </ul>
           </div>
           <div class="footer-column social-media">
             <h2>Theo dõi chúng tôi</h2>
             <div class="social-links">
-              <a href="#" title="Facebook">Facebook</a>
-              <a href="#" title="Instagram">Instagram</a>
-              <a href="#" title="Youtube">Youtube</a>
+              <a href="#" title="Facebook"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a href="#" title="Instagram"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="#" title="Youtube"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
             </div>
           </div>
         </div>
@@ -233,11 +251,10 @@
       </div>
     </footer>
 
-    <!-- CART MODAL -->
     <div id="cart-modal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
-        <h2>🛒 Giỏ hàng của bạn</h2>
+        <h2><i class="fa-solid fa-cart-shopping"></i> Giỏ hàng của bạn</h2>
         <div id="cart-items" class="cart-items"></div>
         <div class="cart-summary">
           <h3>Tổng cộng: <span id="total-price">0 VNĐ</span></h3>

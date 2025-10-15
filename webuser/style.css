@@ -1,11 +1,17 @@
+/* --- GOOGLE FONT --- */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+
+/* --- BIẾN MÀU & STYLE CHUNG --- */
 :root {
-  --primary-color: #0078d7;
+  --primary-color: #d70018; /* Màu đỏ của CellphoneS */
   --secondary-color: #2c3e50;
   --text-color: #333;
-  --light-gray: #f8f9fa;
+  --text-color-light: #666;
+  --light-gray: #f2f2f2;
   --white-color: #ffffff;
-  --danger-color: #e74c3c;
-  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --danger-color: #d70018; /* Dùng luôn màu chính cho giá */
+  --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --box-shadow-hover: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 * {
@@ -15,9 +21,11 @@
 }
 
 body {
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Roboto", sans-serif;
   background: var(--light-gray);
   color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
@@ -26,11 +34,19 @@ body {
   margin: auto;
 }
 
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+/* --- NAVBAR --- */
 .navbar {
-  background: var(--primary-color);
-  color: var(--white-color);
+  background: var(--white-color);
+  color: var(--text-color);
   padding: 15px 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .navbar .container {
@@ -41,38 +57,35 @@ body {
 
 .navbar-brand {
   font-weight: bold;
-  font-size: 1.5em;
-  color: var(--white-color);
+  font-size: 1.6em;
+  color: var(--primary-color);
   text-decoration: none;
 }
-
-nav a {
-  color: var(--white-color);
-  text-decoration: none;
-  font-size: 1.1em;
-  font-weight: 500;
-  margin-left: 20px;
+.navbar-brand i {
+    margin-right: 8px;
 }
 
 .cart-icon {
   position: relative;
   cursor: pointer;
-  font-size: 1.8em;
+  font-size: 1.5em; /* Kích thước icon */
+  color: var(--primary-color);
 }
 
 .cart-count {
   position: absolute;
-  top: -8px;
+  top: -10px;
   right: -12px;
   background: var(--danger-color);
   color: var(--white-color);
   border-radius: 50%;
   padding: 2px 6px;
-  font-size: 0.5em;
+  font-size: 0.6em;
   font-weight: bold;
-  border: 2px solid var(--primary-color);
+  border: 2px solid var(--white-color);
 }
 
+/* --- MAIN LAYOUT --- */
 .main-content-layout {
   display: flex;
   gap: 30px;
@@ -80,19 +93,18 @@ nav a {
 }
 
 .sidebar {
-  flex: 3;
+  flex: 0 0 250px; /* Không co giãn, chiều rộng cố định */
   background: var(--white-color);
   padding: 20px;
   border-radius: 8px;
   box-shadow: var(--box-shadow);
   align-self: flex-start;
   position: sticky;
-  top: 30px;
+  top: 100px; /* Dưới navbar */
 }
 
 .category-list {
   list-style: none;
-  margin-top: 15px;
 }
 
 .category-list li {
@@ -103,13 +115,15 @@ nav a {
   text-decoration: none;
   color: var(--text-color);
   display: block;
-  padding: 10px;
+  padding: 12px 15px;
   border-radius: 6px;
-  transition: background-color 0.2s;
+  transition: all 0.2s ease-in-out;
+  font-weight: 500;
 }
 
 .category-list a:hover {
-  background-color: #f1f3f5;
+  background-color: #ffeeee;
+  color: var(--primary-color);
 }
 
 .category-list a.active {
@@ -119,12 +133,12 @@ nav a {
 }
 
 .product-section {
-  flex: 7;
+  flex: 1;
 }
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   gap: 20px;
 }
 
@@ -132,94 +146,124 @@ nav a {
   background: var(--white-color);
   border-radius: 10px;
   overflow: hidden;
-  text-align: center;
+  text-align: left;
   transition: all 0.3s ease;
   box-shadow: var(--box-shadow);
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
 }
 
 .product-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--box-shadow-hover);
 }
 
 .product-card img {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: contain;
-  padding: 10px;
+  padding: 15px;
+  background-color: #fdfdfd;
 }
 
 .card-content {
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Giúp đẩy button xuống dưới */
 }
 
 .card-content h3 {
   font-size: 1.1em;
+  font-weight: 500;
   min-height: 48px;
+  margin-bottom: 5px;
+}
+
+.card-content .brand {
+    font-size: 0.9em;
+    color: var(--text-color-light);
+    margin-bottom: 10px;
 }
 
 .price {
   color: var(--danger-color);
   font-weight: bold;
-  font-size: 1.2em;
-  margin: 10px 0;
+  font-size: 1.3em;
+  margin-bottom: 15px;
 }
 
 .add-to-cart-btn {
   background: var(--primary-color);
   color: var(--white-color);
-  border: none;
+  border: 1px solid var(--primary-color);
   padding: 10px 15px;
   border-radius: 6px;
   cursor: pointer;
-  margin-top: 10px;
   font-weight: bold;
-  transition: background-color 0.2s;
+  transition: all 0.2s ease-in-out;
+  margin-top: auto; /* Quan trọng: đẩy nút xuống đáy card */
+  width: 100%;
 }
 
 .add-to-cart-btn:hover {
-  background: #005fa3;
+  background: #a80012; /* Màu đỏ đậm hơn */
+  border-color: #a80012;
 }
 
+/* --- MODAL --- */
 .modal {
   display: none;
   position: fixed;
-  z-index: 100;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .modal-content {
   background: var(--white-color);
-  margin: 15% auto;
-  padding: 20px;
+  margin: 10% auto;
+  padding: 25px;
   width: 90%;
-  max-width: 500px;
+  max-width: 600px;
   border-radius: 10px;
   position: relative;
+  animation: slideIn 0.3s;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-30px); opacity: 0;}
+    to { transform: translateY(0); opacity: 1;}
 }
 
 .close {
   position: absolute;
-  top: 10px;
-  right: 20px;
+  top: 15px;
+  right: 25px;
   cursor: pointer;
-  font-size: 28px;
+  font-size: 30px;
   font-weight: bold;
   color: #aaa;
 }
 .close:hover {
-    color: #333;
+  color: #333;
 }
 
 .cart-summary {
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 1px solid #eee;
-    text-align: right;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  text-align: right;
 }
 
 .checkout-btn {
@@ -232,16 +276,22 @@ nav a {
   width: 100%;
   margin-top: 10px;
   font-size: 1.1em;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+.checkout-btn:hover {
+    background-color: #218838;
 }
 
 /* --- FOOTER --- */
 .site-footer {
-  background: var(--secondary-color);
-  color: #ccc;
+  background: var(--white-color);
+  color: var(--text-color-light);
   padding: 40px 0 20px 0;
   margin-top: 40px;
   font-size: 0.95em;
   line-height: 1.8;
+  border-top: 1px solid #ddd;
 }
 
 .footer-content {
@@ -258,11 +308,12 @@ nav a {
 }
 
 .footer-column h2 {
-  color: var(--white-color);
+  color: var(--text-color);
   margin-bottom: 15px;
   font-size: 1.2em;
-  border-bottom: 1px solid #444;
+  border-bottom: 2px solid var(--primary-color);
   padding-bottom: 10px;
+  display: inline-block;
 }
 
 .contact-info ul {
@@ -272,10 +323,19 @@ nav a {
 
 .contact-info li {
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+.contact-info i {
+    color: var(--primary-color);
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
 }
 
 .social-links a {
-  color: #ccc;
+  color: #555;
+  font-size: 1.8em;
   text-decoration: none;
   margin-right: 15px;
   transition: color 0.3s ease;
@@ -283,12 +343,11 @@ nav a {
 
 .social-links a:hover {
   color: var(--primary-color);
-  text-decoration: underline;
 }
 
 .footer-bottom {
   text-align: center;
-  border-top: 1px solid #444;
+  border-top: 1px solid #eee;
   padding-top: 20px;
   color: #aaa;
   font-size: 0.9em;
