@@ -3,13 +3,15 @@
 
 /* --- BIẾN MÀU & STYLE CHUNG --- */
 :root {
-  --primary-color: #d70018; /* Màu đỏ của CellphoneS */
+  --primary-color: #d70018;
+  /* Màu đỏ của CellphoneS */
   --secondary-color: #2c3e50;
   --text-color: #333;
   --text-color-light: #666;
   --light-gray: #f2f2f2;
   --white-color: #ffffff;
-  --danger-color: #d70018; /* Dùng luôn màu chính cho giá */
+  --danger-color: #d70018;
+  /* Dùng luôn màu chính cho giá */
   --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   --box-shadow-hover: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
@@ -34,8 +36,9 @@ body {
   margin: auto;
 }
 
-h1, h2 {
-    margin-bottom: 20px;
+h1,
+h2 {
+  margin-bottom: 20px;
 }
 
 /* --- NAVBAR --- */
@@ -48,7 +51,46 @@ h1, h2 {
   top: 0;
   z-index: 100;
 }
+/* --- MAIN NAV MENU --- */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.main-nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  padding: 5px 0;
+  position: relative;
+  transition: color 0.2s;
+}
 
+.main-nav a:hover {
+  color: var(--primary-color);
+}
+
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width 0.3s;
+}
+
+.main-nav a:hover::after {
+  width: 100%;
+}
 .navbar .container {
   display: flex;
   justify-content: space-between;
@@ -61,14 +103,16 @@ h1, h2 {
   color: var(--primary-color);
   text-decoration: none;
 }
+
 .navbar-brand i {
-    margin-right: 8px;
+  margin-right: 8px;
 }
 
 .cart-icon {
   position: relative;
   cursor: pointer;
-  font-size: 1.5em; /* Kích thước icon */
+  font-size: 1.5em;
+  /* Kích thước icon */
   color: var(--primary-color);
 }
 
@@ -93,14 +137,16 @@ h1, h2 {
 }
 
 .sidebar {
-  flex: 0 0 250px; /* Không co giãn, chiều rộng cố định */
+  flex: 0 0 250px;
+  /* Không co giãn, chiều rộng cố định */
   background: var(--white-color);
   padding: 20px;
   border-radius: 8px;
   box-shadow: var(--box-shadow);
   align-self: flex-start;
   position: sticky;
-  top: 100px; /* Dưới navbar */
+  top: 100px;
+  /* Dưới navbar */
 }
 
 .category-list {
@@ -171,7 +217,8 @@ h1, h2 {
   padding: 15px;
   display: flex;
   flex-direction: column;
-  flex-grow: 1; /* Giúp đẩy button xuống dưới */
+  flex-grow: 1;
+  /* Giúp đẩy button xuống dưới */
 }
 
 .card-content h3 {
@@ -182,9 +229,9 @@ h1, h2 {
 }
 
 .card-content .brand {
-    font-size: 0.9em;
-    color: var(--text-color-light);
-    margin-bottom: 10px;
+  font-size: 0.9em;
+  color: var(--text-color-light);
+  margin-bottom: 10px;
 }
 
 .price {
@@ -203,12 +250,14 @@ h1, h2 {
   cursor: pointer;
   font-weight: bold;
   transition: all 0.2s ease-in-out;
-  margin-top: auto; /* Quan trọng: đẩy nút xuống đáy card */
+  margin-top: auto;
+  /* Quan trọng: đẩy nút xuống đáy card */
   width: 100%;
 }
 
 .add-to-cart-btn:hover {
-  background: #a80012; /* Màu đỏ đậm hơn */
+  background: #a80012;
+  /* Màu đỏ đậm hơn */
   border-color: #a80012;
 }
 
@@ -226,8 +275,13 @@ h1, h2 {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .modal-content {
@@ -242,8 +296,15 @@ h1, h2 {
 }
 
 @keyframes slideIn {
-    from { transform: translateY(-30px); opacity: 0;}
-    to { transform: translateY(0); opacity: 1;}
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .close {
@@ -255,6 +316,7 @@ h1, h2 {
   font-weight: bold;
   color: #aaa;
 }
+
 .close:hover {
   color: #333;
 }
@@ -279,8 +341,9 @@ h1, h2 {
   font-weight: bold;
   transition: background-color 0.2s;
 }
+
 .checkout-btn:hover {
-    background-color: #218838;
+  background-color: #218838;
 }
 
 /* --- FOOTER --- */
@@ -326,11 +389,12 @@ h1, h2 {
   display: flex;
   align-items: center;
 }
+
 .contact-info i {
-    color: var(--primary-color);
-    margin-right: 10px;
-    width: 20px;
-    text-align: center;
+  color: var(--primary-color);
+  margin-right: 10px;
+  width: 20px;
+  text-align: center;
 }
 
 .social-links a {
