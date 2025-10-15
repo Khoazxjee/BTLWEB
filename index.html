@@ -1,157 +1,103 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard - Quản Lý Tiệm Đĩa</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="admin_style.css"> 
-</head>
-<body class="main-body-layout">
-
-    <!-- 1. SIDEBAR (Thanh Điều Hướng Bên) -->
-    <nav id="sidebar" class="sidebar">
-        <div class="sidebar-header">
-            QUẢN LÝ TIỆM ĐĨA
-        </div>
-
-        <a href="#" data-view="dashboard" class="nav-link nav-item active">
-            <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-10v10a1 1 0 001 1h3m-6 0a1 1 0 001-1v-4a1 1 0 00-1-1h-2a1 1 0 00-1 1v4a1 1 0 001 1z"></path></svg>
-            Tổng Quan (Dashboard)
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>K Store - Trang Quản Trị</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="admin_style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container">
+        <a href="index.html" class="navbar-brand">
+          <i class="fa-solid fa-store"></i> K Store Admin
         </a>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html">Về Trang chủ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-        <a href="#" data-view="records" class="nav-link nav-item">
-            <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l-2 2m0 0l7-7 7 7M6 8a2 2 0 002 2h8a2 2 0 002-2M6 8V6a2 2 0 012-2h8a2 2 0 012 2v2M6 8h12"></path></svg>
-            Quản Lý Đĩa Nhạc
-        </a>
-
-        <a href="#" data-view="orders" class="nav-link nav-item">
-            <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
-            Quản Lý Đơn Hàng
-        </a>
-        
-        <div class="sidebar-divider"></div>
-             <!-- Giả định file cửa hàng bán lẻ là index.html -->
-             <a href="index.html" class="nav-link nav-item-secondary">
-                <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-                Trang Bán Hàng (User)
-            </a>
-    </nav>
-
-    <!-- Overlay cho mobile -->
-    <div id="sidebar-overlay" class="modal-overlay hidden-md"></div>
-    
-    <!-- 2. KHU VỰC NỘI DUNG CHÍNH -->
-    <div class="main-wrapper">
-
-        <!-- Top Bar -->
-        <header class="topbar">
-            <!-- Mobile Menu Button -->
-            <button id="menu-toggle" class="menu-toggle-btn hidden-md">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
-            <div class="topbar-title">
-                <span id="current-view-title">Tổng Quan (Dashboard)</span>
+    <main class="container admin-container">
+      <section class="admin-section">
+        <h2>Quản lý sản phẩm</h2>
+        <div class="product-form-container">
+          <h3>Thêm/Sửa sản phẩm</h3>
+          <form id="product-form">
+            <input type="hidden" id="product-id" />
+            <div class="form-group">
+              <label for="product-name">Tên sản phẩm</label>
+              <input type="text" id="product-name" required />
             </div>
-            
-            <!-- User Profile -->
-            <div class="user-profile">
-                <div class="user-info">
-                    <img class="user-avatar" src="https://placehold.co/100x100/3730a3/ffffff?text=U" alt="Ảnh đại diện">
-                    <span class="user-name hidden-sm">Admin User</span>
-                </div>
+            <div class="form-group">
+              <label for="product-brand">Thương hiệu</label>
+              <select id="product-brand" required>
+                <option value="">-- Chọn thương hiệu --</option>
+                <option value="Apple">Apple</option>
+                <option value="Samsung">Samsung</option>
+                <option value="Xiaomi">Xiaomi</option>
+                <option value="OPPO">OPPO</option>
+                <option value="Vivo">Vivo</option>
+                <option value="Realme">Realme</option>
+              </select>
             </div>
-        </header>
-
-        <!-- NỘI DUNG ĐỘNG CỦA TRANG -->
-        <main id="app-content" class="content-area">
-            <!-- Nội dung sẽ được render tại đây bằng JS -->
-        </main>
-    </div>
-
-    <!-- 3. MODAL Thêm/Sửa Đĩa Nhạc -->
-    <div id="record-modal" class="modal">
-        <div class="modal-content large" onclick="event.stopPropagation()">
-            <h2 id="modal-title" class="modal-title">Thêm Đĩa Nhạc Mới</h2>
-            <form id="record-form" onsubmit="handleFormSubmit(event)">
-                <div class="form-group-container">
-                    <!-- Tên Album -->
-                    <div class="form-group">
-                        <label for="album-name" class="form-label">Tên Album (*)</label>
-                        <input type="text" id="album-name" required class="form-input">
-                    </div>
-                    <!-- Nghệ Sĩ & Thể loại -->
-                    <div class="grid-2">
-                        <div class="form-group">
-                            <label for="artist-name" class="form-label">Nghệ Sĩ (*)</label>
-                            <input type="text" id="artist-name" required class="form-input">
-                        </div>
-                        <div class="form-group">
-                            <label for="genre" class="form-label">Thể Loại (*)</label>
-                            <select id="genre" required class="form-input">
-                                <option value="">Chọn Thể Loại</option>
-                                <option value="Pop">Pop</option>
-                                <option value="Rock">Rock</option>
-                                <option value="Jazz">Jazz</option>
-                                <option value="Classical">Classical</option>
-                                <option value="Hip Hop">Hip Hop</option>
-                            </select>
-                        </div>
-                    </div>
-                    <!-- Giá & Tồn Kho -->
-                    <div class="grid-2">
-                        <div class="form-group">
-                            <label for="price" class="form-label">Giá Bán (VND) (*)</label>
-                            <input type="number" id="price" required min="10000" class="form-input">
-                        </div>
-                        <div class="form-group">
-                            <label for="stock" class="form-label">Tồn Kho (*)</label>
-                            <input type="number" id="stock" required min="0" class="form-input">
-                        </div>
-                    </div>
-                    <!-- Ảnh bìa URL -->
-                    <div class="form-group">
-                        <label for="img-url" class="form-label">Ảnh Bìa (URL)</label>
-                        <input type="url" id="img-url" class="form-input">
-                    </div>
-                </div>
-
-                <div class="form-actions">
-                    <button type="button" onclick="closeModal('record-modal')" class="btn btn-secondary">
-                        Hủy
-                    </button>
-                    <button type="submit" class="btn btn-primary">
-                        Lưu Đĩa Nhạc
-                    </button>
-                </div>
-            </form>
+            <div class="form-group">
+              <label for="product-price">Giá (VNĐ)</label>
+              <input type="number" id="product-price" required />
+            </div>
+            <div class="form-group">
+              <label for="product-image">URL Hình ảnh</label>
+              <input type="url" id="product-image" required />
+            </div>
+            <div class="form-actions">
+              <button type="submit" id="add-edit-btn" class="btn btn-primary">
+                Thêm sản phẩm
+              </button>
+              <button type="button" id="clear-btn" class="btn btn-secondary">
+                Xóa Form
+              </button>
+            </div>
+          </form>
         </div>
-    </div>
-    
-    <!-- 4. MODAL Chi tiết Đơn hàng -->
-    <div id="order-details-modal" class="modal">
-        <div class="modal-content large" onclick="event.stopPropagation()">
-            <div class="modal-header">
-                <h2 class="modal-title">Chi Tiết Đơn Hàng <span id="order-modal-id">#ORD001</span></h2>
-                <button class="modal-close" onclick="closeModal('order-details-modal')">&times;</button>
-            </div>
-            <div id="order-details-content" class="modal-body-scroll">
-                <!-- Nội dung chi tiết đơn hàng được render tại đây -->
-            </div>
-        </div>
-    </div>
-    
-    <!-- 5. MODAL Cảnh báo tùy chỉnh -->
-    <div id="custom-alert-modal" class="modal">
-        <div class="modal-content small text-center">
-            <h3 id="alert-title" class="alert-title">Thông báo</h3>
-            <p id="alert-message" class="alert-message">Trang ADMIN.</p>
-            <button class="btn btn-primary" onclick="closeModal('custom-alert-modal')">Đóng</button>
-        </div>
-    </div>
+      </section>
 
-    <!-- LIÊN KẾT ĐẾN FILE JAVASCRIPT TÁCH RỜI -->
+      <section class="admin-section product-list-section">
+        <h3>Danh sách sản phẩm</h3>
+        <table id="product-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Tên sản phẩm</th>
+              <th>Thương hiệu</th>
+              <th>Giá</th>
+              <th>Hình ảnh</th>
+              <th>Hành động</th>
+            </tr>
+          </thead>
+          <tbody>
+            </tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2025 K Store. All Rights Reserved.</p>
+      </div>
+    </footer>
+
     <script src="admin_script.js"></script>
-</body>
+  </body>
 </html>
